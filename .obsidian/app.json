@@ -1,0 +1,11 @@
+{
+  "readableLineLength": false,
+  "livePreview": false,
+  "spellcheck": false,
+  "useTab": false,
+  "smartIndentList": false,
+  "autoPairMarkdown": true,
+  "attachmentFolderPath": "./",
+  "newFileLocation": "current",
+  "showLineNumber": true
+}
