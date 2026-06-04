@@ -4,8 +4,11 @@
   "spellcheck": false,
   "useTab": false,
   "smartIndentList": false,
-  "autoPairMarkdown": true,
+  "autoPairMarkdown": false,
   "attachmentFolderPath": "./",
   "newFileLocation": "current",
-  "showLineNumber": true
+  "showLineNumber": true,
+  "alwaysUpdateLinks": true,
+  "autoPairBrackets": true,
+  "promptDelete": false
 }

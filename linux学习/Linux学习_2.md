@@ -1,4 +1,4 @@
-%%  %%# Linux学习
+# Linux学习
 ## 基本
 ### cat 将 文件内的内容打印在bash上
 ### mkdir 创建文件夹
