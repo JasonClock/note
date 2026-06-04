@@ -164,3 +164,14 @@ crontab -l 可以查看刚刚写下去的列表
 
 不用时可以再次进入crontab计划表去注释掉
 或者 用crontab -r 清空当前用户的crontab的所有任务(加上-i 删去前访问)
+
+## 驱动外部硬件
+
+sudo 命令切换
+```
+sudo -i
+```
+
+在sys文件下有class其中有许多外设
+eg gpio
+gpio内部还有export unexport等文件 其中的export和unexport有重要作用 类si

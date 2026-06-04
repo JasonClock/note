@@ -6,7 +6,7 @@
 
 # R-FPC
 - 名称：right flexible printed circuit board 刚性柔性印刷电路板（软硬结合板）
-- 材料：FR-4 & PI
+- 材料：[[FR-4]] & PI
 - advantage：
 1. 结合PCB和FPC的优点 可以密集布线和高密度连接 
 2. 可靠性
