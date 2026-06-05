@@ -76,7 +76,7 @@ ls -l
 
 ### chmod(改变权限的秘籍)
 ```bash
-eg. chmod -x xxxx
+eg. chmod +x xxxx
 ```
 使其可以执行。
 
@@ -174,4 +174,31 @@ sudo -i
 
 在sys文件下有class其中有许多外设
 eg gpio
-gpio内部还有export unexport等文件 其中的export和unexport有重要作用 类si
+gpio内部还有export unexport等文件
+### gpio相关命令
+#### gpiodetect
+- `pinout` 查找gpio引脚表
+查看有什么引脚可以使用 cat /sys/kernel/debug/gpio
+- 'gpiodetect' 查看gpio芯片状态
+- `gpioinfo`查看引脚分配在哪条线
+-c gpio芯片名称  查看特定芯片管哪些gpio
+- `gpioset` 设置gpio
+gpioset GPIOx=1/0 
+-t 时间 设置时间
+### bash的语法
+```bash
+while true
+do
+
+
+done
+```
+```bash
+if 
+
+
+fi
+```
+注释用#
+## C语言
+
