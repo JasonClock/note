@@ -10,5 +10,9 @@
   "showLineNumber": true,
   "alwaysUpdateLinks": true,
   "autoPairBrackets": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "mobileToolbarCommands": [
+    "command-palette:open",
+    "editor:configure-toolbar"
+  ]
 }
