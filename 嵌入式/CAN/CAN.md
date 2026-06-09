@@ -83,4 +83,22 @@ SJY: ReSynchronization Jump width`
 ## can配置
 启动can的发送和接收外设（can_init)
 配置筛选器
-配置Msg内容（发送邮件内容格式）
+配置Message内容（发送邮件内容格式）
+### 筛选器配置
+CAN_FilterTypeDef结构体
+```C
+typedef struct  
+{  
+  uint32_t FilterIdHigh;         
+  uint32_t FilterIdLow;        
+  uint32_t FilterMaskIdHigh;       
+  uint32_t FilterMaskIdLow;    
+  uint32_t FilterFIFOAssignment;  
+  uint32_t FilterBank;           
+  uint32_t FilterMode;           
+  uint32_t FilterScale;           
+  uint32_t FilterActivation;    
+  uint32_t SlaveStartFilterBank; 
+} CAN_FilterTypeDef;
+
+```
