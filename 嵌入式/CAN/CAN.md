@@ -1,4 +1,4 @@
-# CAN通讯概念
+# CAN通讯
 ## 硬件连接
 ![[Pasted image 20260607234748.png]]
 组成： microControl can控制器 can收发器
@@ -75,5 +75,12 @@ TBS2: TIM Quanta in bit segement 2
 SJY: ReSynchronization Jump width`
 
 
+## 发送过程
+设备1 在发送邮箱里面写邮件（id 长度 数据 校验）
+然后发送到设备2 经过过滤器（过滤不可以发送的邮件）
+最后到设备2的can的接收邮箱
 
-
+## can配置
+启动can的发送和接收外设（can_init)
+配置筛选器
+配置Msg内容（发送邮件内容格式）
