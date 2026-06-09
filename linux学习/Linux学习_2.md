@@ -202,7 +202,7 @@ fi
 注释用#
 ## C语言
 头文件 gpiod.h
-
+### 输出
 gpiod_chip_open 打开内核 告诉地址
 
 gpiod_line_settings/config_new 声明一块地方，赋给settings和config
@@ -210,4 +210,64 @@ gpiod_line_settings/config_new 声明一块地方，赋给settings和config
 把设置的模式和settings联系在一起，在把那一条线和config和settings联系起来
 request把这个chip的这个line交给这个request
 
-使用的时候用gpiod_line_request_set_valueji
+使用的时候用gpiod_line_request_set_value进行对这个chip的这个line的控制
+
+```C
+#include <stdio.h>
+#include <unistd.h>
+#include <gpiod.h>
+
+#define CHIP_PATH "/dev/gpiochip0"
+
+int main(){
+        struct gpiod_chip *chip;
+        struct gpiod_line_settings *settings;
+        struct gpiod_line_config *line_cfg;
+        struct gpiod_line_request *request;
+        int val = 1;
+
+        unsigned int LINE_NUM =17;
+
+        chip = gpiod_chip_open(CHIP_PATH);
+        if(!chip){
+                perror("报错：打不开chip0");
+                return -1;
+        }
+        settings = gpiod_line_settings_new();
+        gpiod_line_settings_set_direction(settings,GPIOD_LINE_DIRECTION_OUTPUT);
+
+        line_cfg = gpiod_line_config_new();
+
+        gpiod_line_config_add_line_settings(line_cfg,&LINE_NUM,1,settings);
+
+        request = gpiod_chip_request_lines(chip,NULL,line_cfg);
+        if (!request) {
+                 perror("报错：向内核请求引脚控制权失败");
+                 gpiod_line_config_free(line_cfg);
+                 gpiod_line_settings_free(settings);
+                 gpiod_chip_close(chip);
+                 return -1;
+        }
+
+        printf("控制成功");
+
+        while(1){
+                gpiod_line_request_set_value(request, LINE_NUM, val);
+                               val = !val;
+                usleep(100000);
+        }
+
+        gpiod_line_request_set_value(request,LINE_NUM,0);
+
+        gpiod_line_request_release(request);
+        gpiod_line_config_free(line_cfg);
+        gpiod_line_settings_free(settings);
+        gpiod_chip_close(chip);
+
+        return 0;
+}
+```
+
+编译依旧使用gcc 不过要在gcc xxx.c -o xxx 后面加上-lgpiod
+
+### 输入
