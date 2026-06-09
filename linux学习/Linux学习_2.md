@@ -201,4 +201,10 @@ fi
 ```
 注释用#
 ## C语言
+头文件 gpiod.h
 
+gpiod_chip_open 打开内核 告诉地址
+
+gpiod_line_settings/config_new 声明一块地方，赋给settings和config
+然后写gpiod_line_setting_set_direction和gpiod_line_config_add_line_setting
+把设置的模式和settings联系在一起，在把
