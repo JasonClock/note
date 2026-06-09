@@ -1,4 +1,4 @@
-                                                                                                    # CAN通讯概念
+# CAN通讯概念
 ## 硬件连接
 ![[Pasted image 20260607234748.png]]
 组成： microControl can控制器 can收发器
@@ -20,7 +20,10 @@ IOS11898标准
 控制器发1时 两条线压差为0v 总线上称为显形电平
 
 多节点发送数据涉及[[总线仲裁]]
-
+## ==CAN外设内部结构==
+    - 邮箱（发送，接收）
+    - 筛选器
+--------
 ## CAN帧类型
 
 | | 名称|用途 |
@@ -57,7 +60,20 @@ CAN每一个节点都有一个[[过滤器]]
 - 控制端
 表示发送多少个字节数据
 由IDE（1）+r0（1）+DLC（4）组成
+r1、r0：保留位 发送的必须是1 接收不管电平 （感觉是用来停顿用的）
 由DLC决定发多少数据
 - 数据段
-发数据的
+发数据的，最多8bits
+
+## 波特率
+bit/s
+can的波特率计算
+CAN波特率 = f~APB~/prescaler/（TBS1+TBS2+SJY）
+
+TBS1: TIM Quanta in bit segement 1
+TBS2: TIM Quanta in bit segement 2
+SJY: ReSynchronization Jump width`
+
+
+
 
