@@ -207,4 +207,7 @@ gpiod_chip_open 打开内核 告诉地址
 
 gpiod_line_settings/config_new 声明一块地方，赋给settings和config
 然后写gpiod_line_setting_set_direction和gpiod_line_config_add_line_setting
-把设置的模式和settings联系在一起，在把
+把设置的模式和settings联系在一起，在把那一条线和config和settings联系起来
+request把这个chip的这个line交给这个request
+
+使用的时候用gpiod_line_request_set_valueji
