@@ -89,8 +89,8 @@ CAN_FilterTypeDef结构体
 ```C
 typedef struct  
 {  
-  uint32_t FilterIdHigh;         
-  uint32_t FilterIdLow;        
+  uint32_t FilterIdHigh;       //Filter Id High配置高16位过滤器  
+  uint32_t FilterIdLow;        //Filter Id High 配置低16位过滤器
   uint32_t FilterMaskIdHigh;       
   uint32_t FilterMaskIdLow;    
   uint32_t FilterFIFOAssignment;  
