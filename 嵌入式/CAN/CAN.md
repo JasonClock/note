@@ -21,8 +21,12 @@ IOS11898标准
 
 多节点发送数据涉及[[总线仲裁]]
 ## ==CAN外设内部结构==
-    - 邮箱（发送，接收）
-    - 筛选器
+stm32f103介绍
+![[Pasted image 20260611211434.png]]
+位速率高达1Mbit/s 支持11位标识符标准帧和29位扩展帧
+    - 三个发送邮箱
+    - 两个有三级结构和14位可编程的滤波器的 FIFO
+    
 --------
 ## CAN帧类型
 
@@ -97,8 +101,13 @@ typedef struct
   uint32_t FilterBank;           
   uint32_t FilterMode;           
   uint32_t FilterScale;           
-  uint32_t FilterActivation;    
+  uint32_t FilterActivation;    //过滤器使能
   uint32_t SlaveStartFilterBank; 
 } CAN_FilterTypeDef;
 
 ```
+
+- FilterMode:滤波器模式选择
+1. CAN_FILTERMoDE_IDMASK（ID掩码模式）
+    gon'lü
+2. CAN_FILTERMoDE-IDLIST（ID列表模式）
