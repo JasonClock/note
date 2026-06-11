@@ -129,3 +129,10 @@ typedef struct
 
 #### FilterScale：过滤器储存模式选择
 选用1个32位或是2个16位过滤器
+
+#### IDhigh和IDlow
+标准帧情况下只需要在high位放置参考id [15:5]
+低位常常用于拓展ID
+can_filter_st.FilterMaskIdHigh = 0xFFE0;
+刚好对应1111 1111 1110 000 只关心id的11位而不关心剩下的RTR,IDE，r0
+#### FilterBank
