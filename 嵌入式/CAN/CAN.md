@@ -107,7 +107,8 @@ typedef struct
 
 ```
 
-- FilterMode:滤波器模式选择
+#### FilterMode:滤波器模式选择
+==两种模式的区别：一个是筛选id范围 一个是只听取其中几个id==
 1. CAN_FILTERMoDE_IDMASK（ID掩码模式）
     工作模式：用参考id＋屏蔽码方式实现，屏蔽码上为1的地方就是参考id需要注意的那几位
     eg
@@ -121,4 +122,10 @@ typedef struct
 |匹配规则|x|x|1|0|0|1|0|x|x|x|x|
 只有屏蔽码为1的位 在看接收到的ID的1/0是否和参考id的
 2. CAN_FILTERMoDE-IDLIST（ID列表模式）
-只在过滤器寄存器里放匹配字符不放屏蔽码
+只在过滤器寄存器里放匹配字符不放屏蔽码，接收到的id必须和其中的标识符完全相等才可以
+- 32位模式下放2个完整的32位标识符
+- 16位模式下放4个16位表示符 
+这个模式下用来放掩码的`FilterMaskIdHigh` / `FilterMaskIdLow`被用来存放标识位
+
+#### FilterScale：过滤器储存模式选择
+选用1个32位或是2个16位过滤器
