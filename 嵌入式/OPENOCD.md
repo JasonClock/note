@@ -24,19 +24,20 @@ Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nR
 Info : CMSIS-DAP: Interface ready                     //外设初始化ok
 Info : clock speed 2000 kHz                     //时钟频率2000KHz
 Info : SWD DPIDR 0x2ba01477                     //swd识别到mcu内核
-Info : [stm32g4x.cpu] Cortex-M4 r0p1 processor detected                      //读取到芯片id寄存器，确认目标是M4内核，版本为r0p1
+Info : [stm32g4x.cpu] Cortex-M4 r0p1 processor detected                      //读取到芯片id寄存器，确认目标是M4内核，版本为r0p1->
 Info : [stm32g4x.cpu] target has 6 breakpoints, 4 watchpoints                      //可以放置四个硬件观察点和六个断点
 下面是CPU 暂停状态与寄存器快照
-- [ ] Info : gdb port disabled [stm32g4x.cpu] halted due to debug-request, current mode: Thread  //由
-xPSR: 0x01000000
+- [ ] Info : gdb port disabled [stm32g4x.cpu] halted due to debug-request,//由于debug请求单片机暂停
+current mode: Thread  //当前cpu处于正常模式，没有进入hardfault等状态
+xPSR: 0x01000000    //程序状态寄存器
 pc: 0x080033fc 
 msp: 0x20020000 
 ** Programming Started ** 
 Info : device idcode = 0x20036469 (STM32G47/G48xx - Rev 'unknown' : 0x2003) 
 Info : RDP level 0 (0xAA) 
-Info : flash size = 256 KB 
+Info : flash size = 256 KB //biao
 Info : flash mode : dual-bank 
-Info : gap detected from 0x08020000 to 0x0803ffff
-Warn : Adding extra erase range, 0x0800c270 .. 0x0800c7ff 
+Info : gap detected from 0x08020000 to 0x0803ffff  
+Warn : Adding extra erase range, 0x0800c270 .. 0x0800c7ff   //告知擦写的地址范围
 ** Programming Finished ** 
 shutdown command invoked    //关机命令调用--说明程序已复位或者跑起来了
