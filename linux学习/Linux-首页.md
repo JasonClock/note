@@ -1,42 +1,24 @@
-# 欢迎回来 &#x1f3e0;
+# 欢迎回来 🏠
+
+这里是 **Linux 学习**笔记首页，记录 Linux 基础与树莓派操作。
 
 ## 快速入口
+- [[linux学习]]
+- [[Linux学习_2]]
 
-- [[Linux学习/00-日记/{{date}}|今日日记]]
-- [[/linux学习/收件箱]]
-- [[项目仪表盘]]
-## 笔记结构
-Vault/
-├── 00-日记/              # Daily Notes 自动存放
-├── 10-[[linux学习]]          
-├── 20-[[Linux学习_2]]         
-├── 30-资源/             
-├── 40-归档/             
-├── Templates/           
-├── attachments
-└── 主页.md             
-## 当前项目
+## 学习进度
+### ✅ 已记录
+- [x] [[linux学习]] —— 树莓派远程连接、软件源、系统启动、目录、GCC 编译、进程
+- [x] [[Linux学习_2]] —— 常用命令、vim/nano、管道与重定向、权限、shell 脚本、cron、GPIO 与 C 语言控制
 
-```dataview
-TABLE status, deadline
-FROM "10-项目"
-WHERE status = "进行中"
+### 🔄 进行中 / 待补充
+- [ ] 收件箱 —— 原计划中的「收件箱」尚未建立
+
+## 目录结构
 ```
-
-## 未完成任务
-
-```dataview
-TASK
-FROM "00-日记"
-WHERE !completed
-LIMIT 10
-```
-
-## 最近更新的笔记
-
-```dataview
-TABLE file.mtime as "最后修改"
-FROM ""
-SORT file.mtime DESC
-LIMIT 5
+linux学习/
+├── linux学习.md
+├── Linux学习_2.md
+├── Linux-首页.md
+└── attachments/    # 图片附件
 ```

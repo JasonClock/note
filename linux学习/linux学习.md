@@ -1,4 +1,4 @@
-# linux学习
+﻿# linux学习
 ## 一些小tips
 ### 远程连接树莓派
 
@@ -6,7 +6,7 @@
 ``` bash
 sudo nmap -sn 你的网络ip地址/24
 ```
-![ ](./屏幕截图 2026-04-10 143459.png)
+![ ](./attachments/屏幕截图 2026-04-10 143459.png)
 在其中找到有写着Raspberry Pi Trading的就是我们的树莓派了
 
 接着在命令行里写
@@ -15,7 +15,7 @@ ssh 你的派的主机名字@它的ip地址
 ```
 接着会出现输入密码的界面
 输入密码后就成功连接上我们树莓派的命令行了
-![ ](9c908a8f-adeb-4bc0-b7ea-eb00e9377bc2.png)
+![ ](./attachments/9c908a8f-adeb-4bc0-b7ea-eb00e9377bc2.png)
 
 ### 查看运存
 
@@ -86,10 +86,10 @@ $1是第一个字段的意思
 
 ## linux系统目录
 
-![](7d4675c2-3405-46a4-859e-7b7535ced0dd.png)
+![](./attachments/7d4675c2-3405-46a4-859e-7b7535ced0dd.png)
 
 /下有大量不同类型的文件
-![](wechat_2026-04-10_145855_305.png)
+![](./attachments/wechat_2026-04-10_145855_305.png)
 
 ## GCC编译原理
 - 预处理 cpp(C preprocessor)(gcc -E xxx.c -o xxx.i)
