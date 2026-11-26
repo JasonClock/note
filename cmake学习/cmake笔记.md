@@ -17,4 +17,3 @@ project(MyProject C)
 //调用 project() 后会自动设置 PROJECT_NAME 等变量
 ```
 
-

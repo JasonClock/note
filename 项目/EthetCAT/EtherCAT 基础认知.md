@@ -36,3 +36,6 @@ ECAT Procesing Unit内部包括：
 - Distributed_Clocks(DC分布式时钟)
 - EEPROM(
 
+# SOES
+ethercat精简版的从站**Simple EtherCAT Slave**
+针对 EtherCat 协议实现的从站（Slave）代码库，名为SOES
